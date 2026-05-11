@@ -4,13 +4,14 @@ databases:
     user: somera_admin
     plan: free
 
+
 services:
   - type: web
     name: somera-bakes
-    env: php
+    runtime: php
     plan: free
     buildCommand: "./build.sh"
-    startCommand: "heroku-php-apache2 public/"
+    startCommand: "apache2-foreground"
     envVars:
       - key: APP_NAME
         value: "Somera Bakes"
@@ -34,13 +35,3 @@ services:
           property: port
       - key: DB_DATABASE
         fromDatabase:
-          name: somera-db
-          property: database
-      - key: DB_USERNAME
-        fromDatabase:
-          name: somera-db
-          property: user
-      - key: DB_PASSWORD
-        fromDatabase:
-          name: somera-db
-          property: password

@@ -5,6 +5,8 @@ databases:
     plan: free
 
 
+
+
 services:
   - type: web
     name: somera-bakes
@@ -18,7 +20,9 @@ services:
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
-        value: "false"
+        value: "true"
+      - key: LOG_CHANNEL
+        value: errorlog
       - key: APP_KEY
         generateValue: true
       - key: APP_URL
@@ -34,5 +38,3 @@ services:
           name: somera-db
           property: port
       - key: DB_DATABASE
-        fromDatabase:
-          name: somera-db

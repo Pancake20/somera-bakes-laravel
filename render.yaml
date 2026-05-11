@@ -19,13 +19,29 @@ databases:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 services:
   - type: web
     name: somera-bakes
     env: docker
     plan: free
     region: oregon
-    startCommand: "php artisan migrate --force && apache2-foreground"
+    startCommand: "export APP_KEY=$(php artisan key:generate --show --no-ansi) && php artisan migrate --force && apache2-foreground"
     envVars:
       - key: APP_NAME
         value: "Somera Bakes"
@@ -34,16 +50,3 @@ services:
         
       - key: APP_DEBUG
         value: "true"
-      - key: LOG_CHANNEL
-        value: errorlog
-      - key: APP_KEY
-        value: "12345678901234567890123456789012"
-      - key: APP_URL
-        value: "https://somera-bakes.onrender.com"
-      - key: DB_CONNECTION
-        value: pgsql
-      - key: DB_HOST
-        fromDatabase:
-          name: somera-db
-          property: host
-

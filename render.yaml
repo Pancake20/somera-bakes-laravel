@@ -7,9 +7,14 @@ databases:
 
 
 
+
+
+
+
 services:
   - type: web
     name: somera-bakes
+    region: oregon
     env: php
     plan: free
     buildCommand: "./build.sh"
@@ -34,5 +39,3 @@ services:
       - key: DB_PORT
         fromDatabase:
           name: somera-db
-          property: port
-      - key: DB_DATABASE

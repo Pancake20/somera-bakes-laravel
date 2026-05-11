@@ -19,6 +19,7 @@ services:
         value: "Somera Bakes"
       - key: APP_ENV
         value: production
+        
       - key: APP_DEBUG
         value: "true"
       - key: LOG_CHANNEL

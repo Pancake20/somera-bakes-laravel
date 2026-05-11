@@ -11,6 +11,14 @@ databases:
 
 
 
+
+
+
+
+
+
+
+
 services:
   - type: web
     name: somera-bakes
@@ -29,7 +37,7 @@ services:
       - key: LOG_CHANNEL
         value: errorlog
       - key: APP_KEY
-        value: "base64:eFeKUex8iqwcJfjlIVxDy/KF8R8jGstwPHfgUZfICJ0="
+        value: "12345678901234567890123456789012"
       - key: APP_URL
         value: "https://somera-bakes.onrender.com"
       - key: DB_CONNECTION
@@ -38,3 +46,4 @@ services:
         fromDatabase:
           name: somera-db
           property: host
+

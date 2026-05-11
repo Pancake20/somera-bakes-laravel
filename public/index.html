@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soméra Bakes — Artisanal Bakery</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <img src="logo.png" alt="Soméra Bakes Logo" style="max-height: 60px;">
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end is-align-items-center">
+        <a class="navbar-item" href="index.html" data-en="The Bakery" data-id="Toko Roti">The Bakery</a>
+        <a class="navbar-item" href="#crafts" data-en="Philosophy" data-id="Filosofi">Philosophy</a>
+        <a class="navbar-item" href="menu.html" data-en="Menu" data-id="Menu">Menu</a>
+        <a class="navbar-item" href="#testimonials" data-en="Reviews" data-id="Ulasan">Reviews</a>
+        <div class="navbar-item is-flex pl-4" style="gap:15px; border-left: 1px solid #F0EAE1;">
+          <a class="has-text-grey-dark is-uppercase" style="font-size: 0.85rem; letter-spacing: 1px;" data-en="Search" data-id="Cari">Search</a>
+          <a class="has-text-grey-dark is-uppercase" style="font-size: 0.85rem; letter-spacing: 1px;" data-en="Cart (0)" data-id="Keranjang (0)">Cart (0)</a>
+          <span class="has-text-grey-light" style="font-size: 0.85rem;">|</span>
+          <div class="is-flex" style="gap:10px; align-items:center;">
+            <a class="has-text-grey-dark lang-btn" data-lang="en" onclick="setLanguage('en')" style="font-size: 0.85rem; cursor:pointer;">EN</a>
+            <span class="has-text-grey-light" style="font-size: 0.75rem;">/</span>
+            <a class="has-text-grey-dark lang-btn" data-lang="id" onclick="setLanguage('id')" style="font-size: 0.85rem; cursor:pointer;">ID</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero is-fullheight-with-navbar" id="home" style="margin-top: 5rem;">
+  <!-- Elegant Sparse Vintage Botanicals -->
+  <img src="botanical_1.png" class="botanical-decor" style="top: 8%; left: -2%; width: 230px; transform: rotate(-12deg);">
+  <img src="botanical_2.png" class="botanical-decor" style="top: 55%; left: 35%; width: 140px; transform: rotate(110deg); opacity: 0.35;">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <!-- Hero Text -->
+        <div class="column is-5 is-offset-1 animate fade-up">
+          <div class="is-flex is-align-items-center mb-4" style="gap: 10px;">
+            <span style="background: var(--cream-dark); border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">✨</span>
+            <p class="is-uppercase has-text-primary m-0" style="letter-spacing: 3px; font-size: 0.8rem; font-weight:600;" data-en="Est. 2026" data-id="Sejak 2026">Est. 2026</p>
+          </div>
+          <h1 class="title is-1 mb-6" data-en="Let Soméra handle your sweet cravings." data-id="Biar Soméra manjakan lidah manismu.">Let Soméra handle your sweet cravings.</h1>
+          <p class="subtitle is-5 mb-6 has-text-grey" style="line-height:1.8; font-weight:300;" data-en="Artisanal baking adapted to your sophisticated palate. Handcrafted daily with premium stoneground grains, wild-fermented yeast, and a whole lot of love." data-id="Panggangan artisanal yang disesuaikan dengan selera tinggi Anda. Dibuat langsung setiap hari dengan biji-bijian giling premium, ragi fermentasi liar, dan penuh cinta.">Artisanal baking adapted to your sophisticated palate. Handcrafted daily with premium stoneground grains, wild-fermented yeast, and a whole lot of love.</p>
+          <div class="buttons" style="gap: 15px;">
+            <button class="pill-btn" onclick="document.getElementById('crafts').scrollIntoView({behavior:'smooth'})">
+              <span class="btn-arrow">➔</span> <span data-en="Grab a Treat" data-id="Pesan Sekarang">Grab a Treat</span>
+            </button>
+            <button class="pill-btn-outline" onclick="window.location.href='menu.html'" data-en="View Full Menu" data-id="Lihat Menu Lengkap">View Full Menu</button>
+          </div>
+        </div>
+        <!-- Hero Carousel & Floating Cards -->
+        <div class="column is-5 is-offset-1 animate scale-in" style="animation-delay: 0.2s;">
+           <div class="hero-img-container">
+             <!-- Left Floating Card -->
+             <div class="floating-card card-left">
+               <img src="logo.png" alt="Soméra Logo">
+               <div>
+                 <p class="floating-card-title">Soméra Bakes</p>
+                 <p class="floating-card-subtitle" data-en="Fresh Nastar out of the oven! 🍪" data-id="Nastar Segar baru matang! 🍪">Fresh Nastar out of the oven! 🍪</p>
+               </div>
+             </div>
+             <!-- Right Floating Card -->
+             <div class="floating-card card-right">
+               <span style="font-size: 1.8rem;">😋</span>
+               <div>
+                 <p class="floating-card-title" data-en="You" data-id="Anda">You</p>
+                 <p class="floating-card-subtitle" data-en="On my way to reserve some!" data-id="Langsung meluncur untuk pesan!">On my way to reserve some!</p>
+               </div>
+             </div>
+             
+             <!-- Slide Carousel -->
+             <div class="carousel-container">
+                <div class="carousel-slide">
+                  <img src="assets/f8e1863a-d31e-4ed9-a792-2fa9e2c6ac5b.jpg" alt="Savory baked goods">
+                  <img src="assets/b5a2e8fc-e388-48ba-819c-dec1ec4b97d8.jpg" alt="Nastar baking">
+                  <img src="assets/4ae608d6-4c25-4165-96ee-c4c586505d77.jpg" alt="Cat tongue cookies">
+                </div>
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: THE CRAFT & HIGH-END OVERLAY CARDS -->
+<section class="section py-6" id="crafts" style="background-color: var(--white); padding-top:6rem !important; padding-bottom:6rem !important;">
+  <!-- Elegant Sparse Vintage Botanicals -->
+  <img src="botanical_2.png" class="botanical-decor" style="top: 15%; right: -3%; width: 270px; transform: rotate(38deg);">
+  <img src="botanical_1.png" class="botanical-decor" style="bottom: 5%; left: -2%; width: 190px; transform: rotate(-45deg);">
+  <div class="container py-6">
+    <div class="has-text-centered mb-6 animate fade-up">
+      <p class="is-uppercase has-text-primary mb-3" style="letter-spacing: 3px; font-size: 0.75rem; font-weight:600;" data-en="Tailored Bakes" data-id="Kreasi Pilihan">Tailored Bakes</p>
+      <h2 class="title is-2 mb-4" data-en="Soméra crafts bakes that fit you perfectly" data-id="Soméra menciptakan panggangan yang sangat cocok untuk Anda">Soméra crafts bakes that fit you perfectly</h2>
+      <p class="subtitle is-6 has-text-grey mx-auto" style="max-width: 500px; font-weight: 300; line-height: 1.7;" data-en="Delicate layers, golden crusts, and sweet melt-in-your-mouth magic shaped by traditional heritage." data-id="Lapisan halus, kulit keemasan, dan keajaiban manis yang meleleh di mulut, dibentuk oleh warisan tradisional.">Delicate layers, golden crusts, and sweet melt-in-your-mouth magic shaped by traditional heritage.</p>
+    </div>
+    
+    <div class="columns is-multiline pt-5">
+      <!-- Overlay Card 1 -->
+      <div class="column is-4 animate fade-up">
+        <div class="overlay-card">
+          <img src="assets/f599ca1e-0a32-4701-971e-5fd30516d1a4.jpg" alt="Choco Peanut Cookies">
+          <div class="overlay-card-content">
+            <h4 class="title" data-en="Signature Crunch" data-id="Kerenyahan Khas">Signature Crunch</h4>
+            <p data-en="Melt-in-your-mouth peanut cookies infused with luxury dark chocolate chips. Perfectly crunchy." data-id="Kue kacang yang meleleh di mulut berpadu dengan kepingan cokelat hitam mewah. Renyah sempurna.">Melt-in-your-mouth peanut cookies infused with luxury dark chocolate chips. Perfectly crunchy.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Middle Textured Rust Card -->
+      <div class="column is-4 animate fade-up" style="animation-delay: 0.1s;">
+        <div class="textured-card">
+          <div>
+            <h3 class="title" data-en="Artisanal Philosophy" data-id="Filosofi Artisanal">Artisanal Philosophy</h3>
+            <p class="mt-4" data-en="We believe baking is an exquisite art form. Every sourdough starter is wild-fermented, every single pastry is slowly rolled by hand, and every batch is customized to our society's refined tastes." data-id="Kami percaya bahwa memanggang adalah bentuk seni yang indah. Setiap ragi sourdough difermentasi secara alami, setiap pastri digulung perlahan dengan tangan, dan setiap panggangan disesuaikan dengan selera halus komunitas kami.">We believe baking is an exquisite art form. Every sourdough starter is wild-fermented, every single pastry is slowly rolled by hand, and every batch is customized to our society's refined tastes.</p>
+          </div>
+          <div class="is-flex is-align-items-center" style="gap: 15px;">
+            <span style="font-size: 2rem;">🌾</span>
+            <span class="has-text-weight-bold" style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;" data-en="100% Traditional" data-id="100% Tradisional">100% Traditional</span>
+          </div>
+        </div>
+      </div>
+      <!-- Overlay Card 2 -->
+      <div class="column is-4 animate fade-up" style="animation-delay: 0.2s;">
+        <div class="overlay-card">
+          <img src="assets/a2c89631-e663-46fe-84e2-09670bb583a7.jpg" alt="Sweet Jam Bread">
+          <div class="overlay-card-content">
+            <h4 class="title" data-en="Sweet Heritage" data-id="Warisan Manis">Sweet Heritage</h4>
+            <p data-en="Traditional sweet dough buns, golden-glazed and packed with housemade organic strawberry jam." data-id="Roti manis tradisional, mengkilap keemasan dan diisi dengan selai stroberi organik buatan sendiri.">Traditional sweet dough buns, golden-glazed and packed with housemade organic strawberry jam.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: ARTISANAL AUTOPILOT (Split view with number-list) -->
+<section class="section" style="background-color: var(--cream); padding-top:6rem; padding-bottom:6rem;">
+  <!-- Elegant Sparse Vintage Botanicals -->
+  <img src="botanical_1.png" class="botanical-decor" style="bottom: 8%; left: 2%; width: 210px; transform: rotate(18deg);">
+  <img src="botanical_2.png" class="botanical-decor" style="top: 10%; right: -3%; width: 230px; transform: rotate(-50deg); opacity: 0.35;">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <!-- Left text & points -->
+      <div class="column is-5 is-offset-1 animate fade-up">
+        <p class="is-uppercase has-text-primary mb-3" style="letter-spacing: 3px; font-size: 0.75rem; font-weight: 600;" data-en="The Baking Process" data-id="Proses Pemanggangan">The Baking Process</p>
+        <h3 class="title is-2 mb-5" data-en="Our bakes are on auto-pilot to absolute perfection." data-id="Panggangan kami diproses otomatis menuju kesempurnaan mutlak.">Our bakes are on auto-pilot to absolute perfection.</h3>
+        <p class="subtitle is-6 has-text-grey mb-6" style="line-height: 1.8; font-weight: 300;" data-en="We follow rigid, time-honored baking protocols so that every loaf, bun, or cookie that arrives to you is an absolute masterpiece of sensory delight." data-id="Kami mengikuti protokol pemanggangan tradisional yang ketat sehingga setiap roti, bakpao, atau kue yang sampai kepada Anda adalah mahakarya kebahagiaan sensorik mutlak.">We follow rigid, time-honored baking protocols so that every loaf, bun, or cookie that arrives to you is an absolute masterpiece of sensory delight.</p>
+        
+        <!-- Feature List -->
+        <div class="feature-list-wrapper">
+          <!-- Point 1 -->
+          <div class="feature-list-item">
+            <div class="feature-number">1</div>
+            <div class="feature-text">
+              <h4 data-en="Crafted at Sunrise" data-id="Dibuat saat Matahari Terbit">Crafted at Sunrise</h4>
+              <p data-en="Our expert bakers begin kneading and scaling before dawn so that you receive bakes fresh from the morning heat." data-id="Tukang roti ahli kami mulai menguleni dan menakar sebelum fajar agar Anda menerima panggangan hangat langsung di pagi hari.">Our expert bakers begin kneading and scaling before dawn so that you receive bakes fresh from the morning heat.</p>
+            </div>
+          </div>
+          <!-- Point 2 -->
+          <div class="feature-list-item">
+            <div class="feature-number">2</div>
+            <div class="feature-text">
+              <h4 data-en="Wild Yeast Fermentation" data-id="Fermentasi Ragi Alami">Wild Yeast Fermentation</h4>
+              <p data-en="We rely on our ancient wild sourdough starter to achieve deep, robust, and complex aroma profiles." data-id="Kami mengandalkan ragi sourdough liar kuno kami untuk mencapai profil aroma yang mendalam, kuat, dan kompleks.">We rely on our ancient wild sourdough starter to achieve deep, robust, and complex aroma profiles.</p>
+            </div>
+          </div>
+          <!-- Point 3 -->
+          <div class="feature-list-item">
+            <div class="feature-number">3</div>
+            <div class="feature-text">
+              <h4 data-en="Handcrafted, Always" data-id="Selalu Dibuat dengan Tangan">Handcrafted, Always</h4>
+              <p data-en="Zero heavy machinery. Every fold, roll, and score is guided by seasoned hands for premium textures." data-id="Tanpa mesin berat. Setiap lipatan, gulungan, dan guratan dipandu oleh tangan-tangan berpengalaman untuk tekstur premium.">Zero heavy machinery. Every fold, roll, and score is guided by seasoned hands for premium textures.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right image -->
+      <div class="column is-5 is-offset-1 animate scale-in" style="animation-delay: 0.2s;">
+        <div class="half-banner-img">
+          <img src="assets/efd0b102-80cd-40d2-b042-089777059904.jpg" alt="Fresh Nastar baking in the oven">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: SIGNATURE MATCHING (Reverse split banner & stats) -->
+<section class="section" style="background-color: var(--white); padding-top:6rem; padding-bottom:6rem;">
+  <!-- Elegant Sparse Vintage Botanicals -->
+  <img src="botanical_2.png" class="botanical-decor" style="top: -5%; right: 4%; width: 240px; transform: rotate(-25deg);">
+  <img src="botanical_1.png" class="botanical-decor" style="bottom: 12%; left: 4%; width: 180px; transform: rotate(15deg);">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <!-- Left image with floating card overlay -->
+      <div class="column is-5 is-offset-1 animate scale-in">
+        <div class="half-banner-img">
+          <img src="assets/830a875e-3b60-42df-a54d-e1f84b83b733.jpg" alt="Signature Meat Floss Rolls">
+          <div class="half-banner-overlay-card">
+            <span style="font-size: 1.5rem;">🔥</span>
+            <div>
+              <p class="has-text-weight-bold is-size-7 m-0" style="color: var(--rust);" data-en="BEST SELLER" data-id="TERLARIS">BEST SELLER</p>
+              <p class="has-text-grey is-size-7" style="margin-top: 2px;" data-en="Over 500+ boxes ordered weekly!" data-id="Lebih dari 500+ kotak dipesan setiap minggu!">Over 500+ boxes ordered weekly!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Right text details -->
+      <div class="column is-5 is-offset-1 animate fade-up" style="animation-delay: 0.2s;">
+        <p class="is-uppercase has-text-primary mb-3" style="letter-spacing: 3px; font-size: 0.75rem; font-weight: 600;" data-en="The Floss Roll Legend" data-id="Legenda Gulung Abon">The Floss Roll Legend</p>
+        <h3 class="title is-2 mb-5" data-en="Exquisite Floss Rolls tailored for luxury." data-id="Roti Gulung Abon Istimewa yang dirancang untuk kemewahan.">Exquisite Floss Rolls tailored for luxury.</h3>
+        <p class="subtitle is-6 has-text-grey mb-6" style="line-height:1.8; font-weight:300;" data-en="Our Floss Roll Bread (Roti Abon) is a symphony of sweet, savory, and rich textures. Hand-rolled soft bread coated with rich savory floss, subtle spices, and a velvety mayo brush." data-id="Roti Gulung Abon kami adalah simfoni tekstur manis, gurih, dan kaya. Roti lembut yang digulung dengan tangan, dilapisi abon gurih melimpah, rempah halus, dan sapuan mayones selembut beludru.">Our Floss Roll Bread (Roti Abon) is a symphony of sweet, savory, and rich textures. Hand-rolled soft bread coated with rich savory floss, subtle spices, and a velvety mayo brush.</p>
+        <button class="pill-btn" onclick="window.location.href='menu.html'">
+          <span class="btn-arrow">➔</span> <span data-en="Explore The Legend" data-id="Jelajahi Sang Legenda">Explore The Legend</span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- STATS ROW (Replaces the corporate partner logos) -->
+    <div class="columns is-multiline has-text-centered mt-6 pt-6" style="border-top: 1px solid var(--cream-dark);">
+      <div class="column is-4 stat-item animate fade-up">
+        <p class="stat-number">100%</p>
+        <p class="stat-label" data-en="Organic Grains" data-id="Biji-bijian Organik">Organic Grains</p>
+      </div>
+      <div class="column is-4 stat-item animate fade-up" style="animation-delay: 0.1s;">
+        <p class="stat-number">12+ Hours</p>
+        <p class="stat-label" data-en="Wild Fermentation" data-id="Fermentasi Alami">Wild Fermentation</p>
+      </div>
+      <div class="column is-4 stat-item animate fade-up" style="animation-delay: 0.2s;">
+        <p class="stat-number" data-en="Zero" data-id="Tanpa">Zero</p>
+        <p class="stat-label" data-en="Artificial Additives" data-id="Bahan Pengawet Buatan">Artificial Additives</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: CUSTOMER PATH TESTIMONIALS (Wavy path test) -->
+<section class="section testimonial-wave-container" id="testimonials" style="background-color: var(--cream);">
+  <!-- Elegant Sparse Vintage Botanicals -->
+  <img src="botanical_1.png" class="botanical-decor" style="top: 10%; left: 4%; width: 180px; transform: rotate(45deg);">
+  <img src="botanical_2.png" class="botanical-decor" style="bottom: 12%; right: 5%; width: 190px; transform: rotate(-15deg);">
+  <!-- SVG Wave background mapping connection path -->
+  <svg class="wave-svg" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,160 C120,120 240,80 360,110 C480,140 600,240 720,240 C840,240 960,140 1080,110 C1200,80 1320,120 1440,160" stroke="var(--rust)" stroke-width="3" stroke-dasharray="10, 10" />
+  </svg>
+
+  <div class="container relative z-index-1">
+    <div class="has-text-centered mb-6 animate fade-up">
+      <p class="is-uppercase has-text-primary mb-3" style="letter-spacing: 3px; font-size: 0.75rem; font-weight:600;" data-en="The Soméra Society" data-id="Komunitas Soméra">The Soméra Society</p>
+      <h2 class="title is-2" data-en="Loved by Gourmet Enthusiasts" data-id="Dicintai oleh Penikmat Kuliner">Loved by Gourmet Enthusiasts</h2>
+    </div>
+
+    <div class="columns pt-6">
+      <!-- Testimonial 1 -->
+      <div class="column is-4 has-text-centered animate fade-up">
+        <div class="testimonial-avatar-wrapper mb-4">
+          <img class="testimonial-avatar" src="assets/f599ca1e-0a32-4701-971e-5fd30516d1a4.jpg" alt="Clara K.">
+        </div>
+        <h4 class="title is-4 mb-2">Clara K.</h4>
+        <p class="has-text-grey is-size-6" style="font-weight:300; font-style: italic; line-height: 1.6;" data-en="&quot;The Sourdough and Choco cookies are absolute masterworks of flavor. The crust is perfectly crackled!&quot;" data-id="&quot;Sourdough dan kukis cokelatnya adalah karya rasa yang luar biasa. Kulit rotinya renyah sempurna!&quot;">"The Sourdough and Choco cookies are absolute masterworks of flavor. The crust is perfectly crackled!"</p>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="column is-4 has-text-centered animate fade-up" style="animation-delay: 0.1s;">
+        <div class="testimonial-avatar-wrapper mb-4">
+          <img class="testimonial-avatar" src="assets/efd0b102-80cd-40d2-b042-089777059904.jpg" alt="Natalie A.">
+        </div>
+        <h4 class="title is-4 mb-2">Natalie A.</h4>
+        <p class="has-text-grey is-size-6" style="font-weight:300; font-style: italic; line-height: 1.6;" data-en="&quot;Butter heaven! Their Nastar melts completely on the tongue. It's a luxury taste in every bite.&quot;" data-id="&quot;Surga mentega! Nastar mereka benar-benar meleleh di lidah. Rasa yang sangat mewah di setiap gigitan.&quot;">"Butter heaven! Their Nastar melts completely on the tongue. It's a luxury taste in every bite."</p>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="column is-4 has-text-centered animate fade-up" style="animation-delay: 0.2s;">
+        <div class="testimonial-avatar-wrapper mb-4">
+          <img class="testimonial-avatar" src="assets/830a875e-3b60-42df-a54d-e1f84b83b733.jpg" alt="Marcus B.">
+        </div>
+        <h4 class="title is-4 mb-2">Marcus B.</h4>
+        <p class="has-text-grey is-size-6" style="font-weight:300; font-style: italic; line-height: 1.6;" data-en="&quot;Hands down the best artisanal bakery in town. The Floss Roll Bread is completely legendary.&quot;" data-id="&quot;Tanpa ragu, ini toko roti artisanal terbaik di kota. Roti gulung abonnya benar-benar legendaris.&quot;">"Hands down the best artisanal bakery in town. The Floss Roll Bread is completely legendary."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: FLOATING CTA BANNER (Subscribe & Oven Box) -->
+<section class="section py-6" style="background-color: var(--white);">
+  <!-- Elegant Sparse Vintage Botanicals -->
+  <img src="botanical_1.png" class="botanical-decor" style="bottom: -5%; left: 4%; width: 240px; transform: rotate(-40deg);">
+  <img src="botanical_2.png" class="botanical-decor" style="top: -10%; right: -2%; width: 210px; transform: rotate(120deg);">
+  <div class="container py-6">
+    <div class="cta-banner-container animate scale-in">
+      <img src="assets/f8e1863a-d31e-4ed9-a792-2fa9e2c6ac5b.jpg" alt="Savory pizza baking in the oven">
+      
+      <!-- Floating Subscribe Box inside CTA image -->
+      <div class="cta-floating-box">
+        <h2 class="title" data-en="Join the Soméra Society" data-id="Gabung Komunitas Soméra">Join the Soméra Society</h2>
+        <p class="mb-5" data-en="Receive exclusive invitations, seasonal artisanal menus, and baking journal insights." data-id="Dapatkan undangan eksklusif, menu artisanal musiman, dan wawasan jurnal pemanggangan.">Receive exclusive invitations, seasonal artisanal menus, and baking journal insights.</p>
+        
+        <div class="field has-addons">
+          <div class="control is-expanded">
+            <input class="input elegant-input is-large" type="email" placeholder="Your email address" data-en="Your email address" data-id="Alamat email Anda">
+          </div>
+          <div class="control">
+            <button class="button newsletter-btn is-large" data-en="Subscribe" data-id="Berlangganan">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer elegant-footer">
+  <div class="container py-5">
+    <div class="columns is-multiline">
+      <div class="column is-4 animate fade-up">
+        <img src="logo.png" alt="Soméra Bakes" style="height:60px; margin-bottom: 1.5rem;">
+        <p class="has-text-grey" style="line-height:1.8; font-weight:300; max-width: 300px;" data-en="Elevating the everyday with exquisite baking creations. A symphony of flavor in every bite." data-id="Meningkatkan hari-hari biasa dengan kreasi panggangan yang istimewa. Simfoni rasa di setiap gigitan.">Elevating the everyday with exquisite baking creations. A symphony of flavor in every bite.</p>
+      </div>
+      <div class="column is-2 is-offset-2-desktop animate fade-up" style="animation-delay:0.1s">
+        <h4 class="title mb-5" data-en="Boutique" data-id="Butik">Boutique</h4>
+        <ul style="line-height: 2;">
+          <li><a href="menu.html" data-en="Our Menu" data-id="Menu Kami">Our Menu</a></li>
+          <li><a href="#" data-en="Bespoke Orders" data-id="Pesanan Khusus">Bespoke Orders</a></li>
+          <li><a href="#" data-en="Corporate" data-id="Korporat">Corporate</a></li>
+        </ul>
+      </div>
+      <div class="column is-2 animate fade-up" style="animation-delay:0.2s">
+        <h4 class="title mb-5" data-en="Maison" data-id="Rumah">Maison</h4>
+        <ul style="line-height: 2;">
+          <li><a href="#" data-en="Our Heritage" data-id="Warisan Kami">Our Heritage</a></li>
+          <li><a href="#" data-en="Journal" data-id="Jurnal">Journal</a></li>
+          <li><a href="#" data-en="Careers" data-id="Karir">Careers</a></li>
+        </ul>
+      </div>
+      <div class="column is-2 animate fade-up" style="animation-delay:0.3s">
+        <h4 class="title mb-5" data-en="Connect" data-id="Hubungi Kami">Connect</h4>
+        <ul style="line-height: 2;">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#" data-en="Contact Us" data-id="Kontak Kami">Contact Us</a></li>
+          <li><a href="#" data-en="Find Us" data-id="Cari Kami">Find Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="is-flex is-justify-content-space-between is-align-items-center mt-6 pt-5" style="border-top: 1px solid #F0EAE1;">
+      <p class="has-text-grey is-size-7" style="letter-spacing: 1px;" data-en="© 2026 SOMÉRA BAKES. ALL RIGHTS RESERVED." data-id="© 2026 SOMÉRA BAKES. HAK CIPTA DILINDUNGI.">© 2026 SOMÉRA BAKES. ALL RIGHTS RESERVED.</p>
+      <div class="is-flex" style="gap: 20px;">
+        <a href="#" class="has-text-grey is-size-7" data-en="PRIVACY" data-id="PRIVASI">PRIVACY</a>
+        <a href="#" class="has-text-grey is-size-7" data-en="TERMS" data-id="SYARAT">TERMS</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

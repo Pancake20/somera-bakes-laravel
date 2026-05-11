@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Menu — Soméra Bakes</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <img src="logo.png" alt="Soméra Bakes Logo" style="max-height: 60px;">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end is-align-items-center">
+          <a class="navbar-item" href="index.html" data-en="The Bakery" data-id="Toko Roti">The Bakery</a>
+          <a class="navbar-item" href="index.html#categories" data-en="Collections" data-id="Koleksi">Collections</a>
+          <a class="navbar-item has-text-primary" href="menu.html" data-en="Menu" data-id="Menu">Menu</a>
+          <a class="navbar-item" href="index.html#about" data-en="Our Story" data-id="Kisah Kami">Our Story</a>
+          <div class="navbar-item is-flex pl-4" style="gap:15px; border-left: 1px solid #F0EAE1;">
+            <a class="has-text-grey-dark is-uppercase" style="font-size: 0.85rem; letter-spacing: 1px;" data-en="Search"
+              data-id="Cari">Search</a>
+            <a class="has-text-grey-dark is-uppercase" style="font-size: 0.85rem; letter-spacing: 1px;"
+              data-en="Cart (0)" data-id="Keranjang (0)">Cart (0)</a>
+            <span class="has-text-grey-light" style="font-size: 0.85rem;">|</span>
+            <div class="is-flex" style="gap:10px; align-items:center;">
+              <a class="has-text-grey-dark lang-btn" data-lang="en" onclick="setLanguage('en')"
+                style="font-size: 0.85rem; cursor:pointer;">EN</a>
+              <span class="has-text-grey-light" style="font-size: 0.75rem;">/</span>
+              <a class="has-text-grey-dark lang-btn" data-lang="id" onclick="setLanguage('id')"
+                style="font-size: 0.85rem; cursor:pointer;">ID</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="hero is-small" style="background-color: var(--cream); margin-top: 5rem; border-bottom: 1px solid var(--cream-dark);">
+    <!-- Elegant Sparse Vintage Botanicals -->
+    <img src="botanical_1.png" class="botanical-decor" style="top: 10%; left: 8%; width: 140px; transform: rotate(-25deg);">
+    <img src="botanical_2.png" class="botanical-decor" style="bottom: -15%; right: 8%; width: 150px; transform: rotate(15deg);">
+    <div class="hero-body has-text-centered py-6">
+      <div class="container animate fade-up">
+        <p class="is-uppercase has-text-primary mb-3" style="letter-spacing: 3px; font-size: 0.85rem;" data-en="Discover our creations" data-id="Temukan kreasi kami">Discover our creations</p>
+        <h1 class="title is-1" data-en="The Full Menu" data-id="Menu Lengkap">The Full Menu</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL MENU -->
+  <section class="section" style="background-color: var(--white); padding-top:4rem; padding-bottom:6rem;">
+    <!-- Elegant Sparse Vintage Botanicals -->
+    <img src="botanical_1.png" class="botanical-decor" style="bottom: 5%; left: 3%; width: 220px; transform: rotate(10deg);">
+    <img src="botanical_2.png" class="botanical-decor" style="top: 8%; right: -2%; width: 210px; transform: rotate(-45deg);">
+    <div class="container">
+      <div class="columns is-mobile is-multiline">
+        <!-- Item 1 -->
+        <div class="column is-12-mobile is-6-tablet is-4-desktop animate fade-up">
+          <div class="elegant-card">
+            <div class="card-image is-flex is-align-items-center is-justify-content-center"
+              style="height:320px; overflow: hidden;">
+              <img src="assets/f599ca1e-0a32-4701-971e-5fd30516d1a4.jpg" alt="Choco Peanut Cookies"
+                style="object-fit: cover; width: 100%; height: 100%; transition: transform 0.5s ease;"
+                onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
+            <div class="card-content">
+              <p class="title">Choco Peanut Cookies</p>
+              <p class="price mt-2">Rp 35.000</p>
+            </div>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="column is-12-mobile is-6-tablet is-4-desktop animate fade-up" style="animation-delay:0.1s">
+          <div class="elegant-card">
+            <div class="card-image is-flex is-align-items-center is-justify-content-center"
+              style="height:320px; overflow: hidden;">
+              <img src="assets/efd0b102-80cd-40d2-b042-089777059904.jpg" alt="Signature Nastar"
+                style="object-fit: cover; width: 100%; height: 100%; transition: transform 0.5s ease;"
+                onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
+            <div class="card-content">
+              <p class="title" data-en="Signature Nastar" data-id="Nastar Khas">Signature Nastar</p>
+              <p class="price mt-2">Rp 65.000</p>
+            </div>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="column is-12-mobile is-6-tablet is-4-desktop animate fade-up" style="animation-delay:0.2s">
+          <div class="elegant-card">
+            <div class="card-image is-flex is-align-items-center is-justify-content-center"
+              style="height:320px; overflow: hidden;">
+              <img src="assets/830a875e-3b60-42df-a54d-e1f84b83b733.jpg" alt="Floss Roll Bread"
+                style="object-fit: cover; width: 100%; height: 100%; transition: transform 0.5s ease;"
+                onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
+            <div class="card-content">
+              <p class="title" data-en="Floss Roll Bread" data-id="Roti Gulung Abon">Floss Roll Bread</p>
+              <p class="price mt-2">Rp 25.000</p>
+            </div>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="column is-12-mobile is-6-tablet is-4-desktop animate fade-up">
+          <div class="elegant-card">
+            <div class="card-image is-flex is-align-items-center is-justify-content-center"
+              style="height:320px; overflow: hidden;">
+              <img src="assets/a2c89631-e663-46fe-84e2-09670bb583a7.jpg" alt="Sweet Jam Bread"
+                style="object-fit: cover; width: 100%; height: 100%; transition: transform 0.5s ease;"
+                onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
+            <div class="card-content">
+              <p class="title" data-en="Sweet Jam Bread" data-id="Roti Selai Manis">Sweet Jam Bread</p>
+              <p class="price mt-2">Rp 15.000</p>
+            </div>
+          </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="column is-12-mobile is-6-tablet is-4-desktop animate fade-up" style="animation-delay:0.1s">
+          <div class="elegant-card">
+            <div class="card-image is-flex is-align-items-center is-justify-content-center"
+              style="height:320px; overflow: hidden;">
+              <img src="assets/4ae608d6-4c25-4165-96ee-c4c586505d77.jpg" alt="Lidah Kucing Cookies"
+                style="object-fit: cover; width: 100%; height: 100%; transition: transform 0.5s ease;"
+                onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
+            <div class="card-content">
+              <p class="title" data-en="Lidah Kucing Cookies" data-id="Kue Lidah Kucing">Lidah Kucing Cookies</p>
+              <p class="price mt-2">Rp 45.000</p>
+            </div>
+          </div>
+        </div>
+        <!-- Item 6 -->
+        <div class="column is-12-mobile is-6-tablet is-4-desktop animate fade-up" style="animation-delay:0.2s">
+          <div class="elegant-card">
+            <div class="card-image is-flex is-align-items-center is-justify-content-center"
+              style="height:320px; overflow: hidden;">
+              <img src="assets/f8e1863a-d31e-4ed9-a792-2fa9e2c6ac5b.jpg" alt="Spicy Mayo Sausage Bread"
+                style="object-fit: cover; width: 100%; height: 100%; transition: transform 0.5s ease;"
+                onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
+            <div class="card-content">
+              <p class="title" data-en="Spicy Mayo Sausage Bread" data-id="Roti Sosis Mayo Pedas">Spicy Mayo Sausage
+                Bread</p>
+              <p class="price mt-2">Rp 18.000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer elegant-footer">
+    <div class="container py-5">
+      <div class="columns is-multiline">
+        <div class="column is-4 animate fade-up">
+          <img src="logo.png" alt="Soméra Bakes" style="height:60px; margin-bottom: 1.5rem;">
+          <p class="has-text-grey" style="line-height:1.8; font-weight:300; max-width: 300px;"
+            data-en="Elevating the everyday with exquisite baking creations. A symphony of flavor in every bite."
+            data-id="Meningkatkan hari-hari biasa dengan kreasi panggangan yang istimewa. Simfoni rasa di setiap gigitan.">
+            Elevating the everyday with exquisite baking creations. A symphony of flavor in every bite.</p>
+        </div>
+        <div class="column is-2 is-offset-2-desktop animate fade-up" style="animation-delay:0.1s">
+          <h4 class="title mb-5" data-en="Boutique" data-id="Butik">Boutique</h4>
+          <ul style="line-height: 2;">
+            <li><a href="menu.html" data-en="Our Menu" data-id="Menu Kami">Our Menu</a></li>
+            <li><a href="#" data-en="Bespoke Orders" data-id="Pesanan Khusus">Bespoke Orders</a></li>
+            <li><a href="#" data-en="Corporate" data-id="Korporat">Corporate</a></li>
+          </ul>
+        </div>
+        <div class="column is-2 animate fade-up" style="animation-delay:0.2s">
+          <h4 class="title mb-5" data-en="Maison" data-id="Rumah">Maison</h4>
+          <ul style="line-height: 2;">
+            <li><a href="#" data-en="Our Heritage" data-id="Warisan Kami">Our Heritage</a></li>
+            <li><a href="#" data-en="Journal" data-id="Jurnal">Journal</a></li>
+            <li><a href="#" data-en="Careers" data-id="Karir">Careers</a></li>
+          </ul>
+        </div>
+        <div class="column is-2 animate fade-up" style="animation-delay:0.3s">
+          <h4 class="title mb-5" data-en="Connect" data-id="Hubungi Kami">Connect</h4>
+          <ul style="line-height: 2;">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#" data-en="Contact Us" data-id="Kontak Kami">Contact Us</a></li>
+            <li><a href="#" data-en="Find Us" data-id="Cari Kami">Find Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="is-flex is-justify-content-space-between is-align-items-center mt-6 pt-5"
+        style="border-top: 1px solid #F0EAE1;">
+        <p class="has-text-grey is-size-7" style="letter-spacing: 1px;"
+          data-en="© 2026 SOMÉRA BAKES. ALL RIGHTS RESERVED." data-id="© 2026 SOMÉRA BAKES. HAK CIPTA DILINDUNGI.">©
+          2026 SOMÉRA BAKES. ALL RIGHTS RESERVED.</p>
+        <div class="is-flex" style="gap: 20px;">
+          <a href="#" class="has-text-grey is-size-7" data-en="PRIVACY" data-id="PRIVASI">PRIVACY</a>
+          <a href="#" class="has-text-grey is-size-7" data-en="TERMS" data-id="SYARAT">TERMS</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -16,6 +16,8 @@ services:
         value: true
       - key: LOG_CHANNEL
         value: errorlog
+      - key: APP_CIPHER
+        value: AES-256-CBC
       - key: DB_CONNECTION
         value: pgsql
       - key: DB_HOST

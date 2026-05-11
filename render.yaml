@@ -9,6 +9,7 @@ services:
     name: somera-bakes
     runtime: docker
     plan: free
+
     envVars:
       - key: APP_KEY
         value: base64:p8H5H9yP/6XkR7zWp9U5f7X3z7k8v9Y0n1M2K3L4H5I=

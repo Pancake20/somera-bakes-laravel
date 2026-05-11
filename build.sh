@@ -6,13 +6,9 @@ echo "Installing PHP dependencies..."
 composer install --no-dev --optimize-autoloader
 
 echo "Clearing caches..."
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
 
 echo "Linking storage..."
 php artisan storage:link || true
-
-echo "Running migrations & seeders..."
-php artisan migrate --force
-php artisan db:seed --force

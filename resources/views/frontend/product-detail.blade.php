@@ -1,81 +1,79 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Main Content Canvas -->
-<main class="pt-20 pb-section-padding">
-<!-- Hero Section -->
-<section class="relative w-full h-[819px] min-h-[600px] flex items-center justify-center overflow-hidden bg-surface-container">
-<!-- Immersive Background Image -->
-<div class="absolute inset-0 w-full h-full">
-<img alt="{{ $product->title_en }}" class="w-full h-full object-cover object-center" src="{{ asset($product->image ?? 'assets/a2c89631-e663-46fe-84e2-09670bb583a7.jpg') }}"/>
-<!-- Tonal Scrim -->
-<div class="absolute inset-0 bg-surface/30 backdrop-blur-[2px]"></div>
-</div>
-<!-- Content overlay -->
-<div class="relative z-10 glass-panel max-w-3xl mx-auto p-12 md:p-16 text-center rounded-xl mx-4 shadow-[0_30px_50px_-12px_rgba(102,17,35,0.1)]">
-<div class="inline-block px-4 py-1 rounded-full bg-surface-variant text-on-surface-variant font-label-caps uppercase mb-6 tracking-widest">
-    @if($product->is_bestseller) Signature Collection @else Artisanal Bakery @endif
-</div>
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">
-    {{ $product->title_en }}
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-8">
-    {{ $product->description_en }}
-</p>
-<div class="font-display-lg text-headline-md text-primary mb-8">
-    Rp {{ number_format((float) str_replace(['Rp', '.', ' '], '', $product->price), 0, ',', '.') }}
-</div>
-<button onclick="orderWhatsApp('{{ addslashes($product->title_en) }}')" class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-label-caps uppercase tracking-widest hover:bg-primary-container transition-colors duration-300">
-<span class="material-symbols-outlined text-[20px]">chat</span>
-    Order via WhatsApp
-</button>
-</div>
+<!-- PRODUCT HERO -->
+<section class="hero is-medium" style="background-color: var(--cream); margin-top: 5rem; border-bottom: 1px solid var(--cream-dark); position: relative; overflow: hidden;">
+  <img src="{{ asset('botanical_1.png') }}" class="botanical-decor" style="top: 5%; left: 5%; width: 150px; transform: rotate(-15deg);">
+  <img src="{{ asset('botanical_2.png') }}" class="botanical-decor" style="bottom: -10%; right: 5%; width: 180px; transform: rotate(25deg);">
+  
+  <div class="hero-body">
+    <div class="container animate fade-up">
+      <div class="columns is-vcentered">
+        <!-- Image Column -->
+        <div class="column is-5 is-offset-1 animate scale-in">
+          <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(102,17,35,0.1); position: relative;">
+            <img src="{{ asset($product->image ?? 'assets/a2c89631-e663-46fe-84e2-09670bb583a7.jpg') }}" alt="{{ $product->title_en }}" style="width: 100%; height: auto; display: block;">
+            @if($product->is_bestseller)
+            <span style="position:absolute; top: 15px; right: 15px; background: var(--rust); color: white; padding: 6px 12px; font-size: 0.75rem; font-weight: bold; letter-spacing: 1px; border-radius: 4px;" data-en="BEST SELLER" data-id="TERLARIS">BEST SELLER</span>
+            @endif
+          </div>
+        </div>
+        
+        <!-- Text Column -->
+        <div class="column is-5 is-offset-1 animate fade-up" style="animation-delay: 0.2s;">
+          <p class="is-uppercase has-text-primary mb-3" style="letter-spacing: 3px; font-size: 0.85rem;" data-en="Signature Collection" data-id="Koleksi Khas">Signature Collection</p>
+          <h1 class="title is-1 mb-4" data-en="{{ $product->title_en }}" data-id="{{ $product->title_id }}">{{ $product->title_en }}</h1>
+          <p class="subtitle is-5 has-text-grey mb-5" style="line-height: 1.8; font-weight: 300;" data-en="{{ $product->description_en }}" data-id="{{ $product->description_id }}">{{ $product->description_en }}</p>
+          <p class="title is-3 mb-6" style="color: var(--rust);">Rp {{ number_format((float) str_replace(['Rp', '.', ' '], '', $product->price), 0, ',', '.') }}</p>
+          
+          <button class="pill-btn" onclick="orderWhatsApp('{{ addslashes($product->title_en) }}')">
+            <span class="btn-arrow">➔</span> <span data-en="Order via WhatsApp" data-id="Pesan via WhatsApp">Order via WhatsApp</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Description & Details (Bento Grid) -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding">
-<div class="botanical-divider mb-16"></div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-<!-- Main Narrative -->
-<div class="md:col-span-7 space-y-8 pr-0 md:pr-12">
-<h2 class="font-headline-md text-headline-md text-primary">The Art of the Craft</h2>
-<div class="font-body-lg text-body-lg text-on-surface-variant space-y-6">
-<p>
-    Born from a desire to balance intense flavors with bright notes, this creation is our crowning achievement. Each bake takes precise temperature control and an unwavering dedication to detail.
-</p>
-<p>
-    The foundation is crafted with a flourless sponge, dense yet yielding, offering a deep, roasted profile. Above it rests a vibrant layer crafted from ingredients hand-foraged in the early morning to capture their peak freshness.
-</p>
-</div>
-</div>
-<!-- Attributes & Specs -->
-<div class="md:col-span-5 space-y-6 mt-12 md:mt-0">
-<div class="glass-panel p-8 rounded-xl shadow-[0_20px_40px_-15px_rgba(102,17,35,0.08)]">
-<h3 class="font-headline-sm text-headline-sm text-primary mb-6 border-b border-outline-variant/30 pb-4">Details</h3>
-<dl class="space-y-4">
-<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
-<dt class="font-label-caps text-label-caps text-on-surface-variant uppercase">Serves</dt>
-<dd class="font-body-md text-body-md text-on-background">6 - 8 Portions</dd>
-</div>
-<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
-<dt class="font-label-caps text-label-caps text-on-surface-variant uppercase">Storage</dt>
-<dd class="font-body-md text-body-md text-on-background">Keep refrigerated</dd>
-</div>
-<div class="flex justify-between items-center py-2 border-b border-outline-variant/10">
-<dt class="font-label-caps text-label-caps text-on-surface-variant uppercase">Shelf Life</dt>
-<dd class="font-body-md text-body-md text-on-background">3 days</dd>
-</div>
-</dl>
-<div class="mt-8">
-<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-3">Dietary Notes</h4>
-<div class="flex flex-wrap gap-2">
-<span class="px-4 py-1.5 rounded-full bg-surface-variant text-on-surface-variant font-label-caps text-[10px] uppercase">Gluten-Free</span>
-<span class="px-4 py-1.5 rounded-full bg-surface-variant text-on-surface-variant font-label-caps text-[10px] uppercase">Contains Dairy</span>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!-- DETAILS & DIETARY -->
+<section class="section" style="background-color: var(--white); padding-top:5rem; padding-bottom:6rem; position: relative;">
+  <img src="{{ asset('botanical_2.png') }}" class="botanical-decor" style="bottom: 10%; left: -2%; width: 200px; transform: rotate(-35deg); opacity: 0.4;">
+  
+  <div class="container">
+    <div class="columns">
+      <div class="column is-7 animate fade-up">
+        <h2 class="title is-3 mb-5" data-en="The Art of the Craft" data-id="Seni Keahlian">The Art of the Craft</h2>
+        <div class="content has-text-grey" style="line-height: 1.8; font-weight: 300;">
+          <p data-en="Born from a desire to balance intense flavors with bright notes, this creation is our crowning achievement. Each bake takes precise temperature control and an unwavering dedication to detail." data-id="Terlahir dari keinginan untuk menyeimbangkan rasa intens dengan nada cerah, kreasi ini adalah pencapaian puncak kami.">Born from a desire to balance intense flavors with bright notes, this creation is our crowning achievement. Each bake takes precise temperature control and an unwavering dedication to detail.</p>
+          <p data-en="The foundation is crafted with a flourless sponge, dense yet yielding, offering a deep, roasted profile. Above it rests a vibrant layer crafted from ingredients hand-foraged in the early morning to capture their peak freshness." data-id="Pondasinya dibuat dengan spons tanpa tepung, padat namun lembut. Di atasnya terdapat lapisan cerah yang dibuat dari bahan-bahan yang diambil langsung di pagi hari.">The foundation is crafted with a flourless sponge, dense yet yielding, offering a deep, roasted profile. Above it rests a vibrant layer crafted from ingredients hand-foraged in the early morning to capture their peak freshness.</p>
+        </div>
+      </div>
+      
+      <div class="column is-4 is-offset-1 animate fade-up" style="animation-delay: 0.2s;">
+        <div style="background: var(--cream); border-radius: 12px; padding: 2rem; border: 1px solid var(--cream-dark);">
+          <h3 class="title is-4 mb-4" style="border-bottom: 1px solid var(--cream-dark); padding-bottom: 10px;" data-en="Details" data-id="Detail">Details</h3>
+          
+          <div class="is-flex is-justify-content-space-between mb-3" style="border-bottom: 1px dashed #e2dcd2; padding-bottom: 8px;">
+            <span class="has-text-weight-bold is-uppercase" style="font-size: 0.8rem; letter-spacing: 1px; color: var(--charcoal);" data-en="Serves" data-id="Porsi">Serves</span>
+            <span class="has-text-grey" data-en="6 - 8 Portions" data-id="6 - 8 Porsi">6 - 8 Portions</span>
+          </div>
+          <div class="is-flex is-justify-content-space-between mb-3" style="border-bottom: 1px dashed #e2dcd2; padding-bottom: 8px;">
+            <span class="has-text-weight-bold is-uppercase" style="font-size: 0.8rem; letter-spacing: 1px; color: var(--charcoal);" data-en="Storage" data-id="Penyimpanan">Storage</span>
+            <span class="has-text-grey" data-en="Keep refrigerated" data-id="Simpan di kulkas">Keep refrigerated</span>
+          </div>
+          <div class="is-flex is-justify-content-space-between mb-5">
+            <span class="has-text-weight-bold is-uppercase" style="font-size: 0.8rem; letter-spacing: 1px; color: var(--charcoal);" data-en="Shelf Life" data-id="Masa Simpan">Shelf Life</span>
+            <span class="has-text-grey" data-en="3 days" data-id="3 hari">3 days</span>
+          </div>
+          
+          <h4 class="title is-6 mb-3 is-uppercase" style="letter-spacing: 1px;" data-en="Dietary Notes" data-id="Catatan Diet">Dietary Notes</h4>
+          <div class="tags">
+            <span class="tag is-rounded" style="background: var(--white); border: 1px solid var(--cream-dark); color: var(--charcoal);" data-en="Gluten-Free" data-id="Bebas Gluten">Gluten-Free</span>
+            <span class="tag is-rounded" style="background: var(--white); border: 1px solid var(--cream-dark); color: var(--charcoal);" data-en="Contains Dairy" data-id="Mengandung Susu">Contains Dairy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-</main>
 @endsection

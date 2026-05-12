@@ -1,68 +1,76 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Main Content Canvas -->
-<main class="flex-grow pt-[120px] pb-section-padding">
-<!-- Hero Section -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding text-center relative">
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 relative z-10 animate-fade-in-up">The Heritage of Artisanal Luxury</h1>
-<div class="botanical-divider"></div>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto relative z-10 mt-6 leading-relaxed">
-    Rooted in tradition and elevated by modern technique, our journey began with a simple desire: to create baking experiences that transcend the ordinary. Every ingredient tells a story of quality; every technique is a testament to our dedication.
-</p>
-</section>
-
-<!-- Our Philosophy -->
-<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-padding grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
-<div class="order-2 md:order-1 flex flex-col justify-center">
-    <span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-4 block">Our Philosophy</span>
-    <h2 class="font-headline-md text-headline-md text-primary mb-6">Crafted with Uncompromising Passion</h2>
-    <p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
-        We believe that true luxury lies in the details. From the meticulous sourcing of organic, stone-ground flour to the hours of careful wild yeast fermentation, we refuse to take shortcuts. Our artisanal autopilot is driven by seasoned hands, not heavy machinery.
-    </p>
-    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-        The result is a symphony of flavor—delicate layers, golden crusts, and sweet melt-in-your-mouth magic that honors the heritage of traditional baking while appealing to a refined, modern palate.
-    </p>
-</div>
-<div class="order-1 md:order-2 relative h-[500px] w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(102,17,35,0.08)]">
-    <img alt="Artisanal baker carefully dusting flour over fresh dough" class="w-full h-full object-cover" src="{{ asset('assets/4ae608d6-4c25-4165-96ee-c4c586505d77.jpg') }}"/>
-    <div class="absolute inset-0 bg-surface/10 mix-blend-overlay"></div>
-</div>
-</section>
-
-<!-- The Ingredients -->
-<section class="w-full bg-surface-container py-section-padding mb-section-padding relative overflow-hidden">
-<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
-<div class="absolute bottom-0 left-0 w-80 h-80 bg-secondary/5 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4"></div>
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
-    <div class="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(102,17,35,0.1)]">
-        <img alt="Close up of premium ingredients like saffron and berries on a wooden table" class="w-full h-full object-cover" src="{{ asset('assets/a2c89631-e663-46fe-84e2-09670bb583a7.jpg') }}"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-surface-container/80 to-transparent"></div>
+<!-- PAGE HEADER -->
+<section class="hero is-small" style="background-color: var(--cream); margin-top: 5rem; border-bottom: 1px solid var(--cream-dark); position: relative; overflow: hidden;">
+  <img src="{{ asset('botanical_1.png') }}" class="botanical-decor" style="top: 5%; left: 5%; width: 150px; transform: rotate(-15deg);">
+  <img src="{{ asset('botanical_2.png') }}" class="botanical-decor" style="bottom: -10%; right: 5%; width: 180px; transform: rotate(25deg);">
+  <div class="hero-body has-text-centered py-6">
+    <div class="container animate fade-up">
+      <p class="is-uppercase has-text-primary mb-3" style="letter-spacing: 3px; font-size: 0.85rem;" data-en="The Heritage of Artisanal Luxury" data-id="Warisan Kemewahan Artisanal">The Heritage of Artisanal Luxury</p>
+      <h1 class="title is-1" data-en="Our Story" data-id="Kisah Kami">Our Story</h1>
     </div>
-    <div class="flex flex-col justify-center bg-surface/60 backdrop-blur-md p-8 md:p-12 rounded-2xl border border-outline-variant/30 -ml-0 md:-ml-16 mt-[-4rem] md:mt-0 relative z-20">
-        <span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-4 block">The Essence</span>
-        <h2 class="font-headline-md text-headline-md text-primary mb-6">Purity in Every Crumb</h2>
-        <p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
-            We source only the finest, 100% natural ingredients. No artificial additives. No preservatives. Just the pure, unadulterated goodness of nature, expertly combined to create taste profiles that linger long after the last bite.
-        </p>
-        <ul class="space-y-4 font-body-md text-on-surface-variant">
-            <li class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">eco</span><span>100% Organic Stone-Ground Flour</span></li>
-            <li class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">bakery_dining</span><span>Wild Sourdough Fermentation</span></li>
-            <li class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">favorite</span><span>Handcrafted with Zero Heavy Machinery</span></li>
-        </ul>
-    </div>
-</div>
+  </div>
 </section>
 
-<!-- Call to Action -->
-<section class="max-w-3xl mx-auto px-margin-mobile text-center">
-<h3 class="font-headline-sm text-headline-sm text-primary mb-6">Experience the Legacy</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8">
-    We invite you to taste the difference that true artisanal craftsmanship makes. Explore our luxury menu and become part of the Soméra Society.
-</p>
-<a class="inline-flex px-8 py-4 bg-primary text-on-primary rounded-full font-label-caps text-label-caps tracking-widest hover:bg-primary-container transition-all duration-300 shadow-lg shadow-primary/20 uppercase" href="{{ route('menu') }}">
-    Discover Our Menu
-</a>
+<!-- MAIN CONTENT -->
+<section class="section" style="background-color: var(--white); padding-top:5rem; padding-bottom:6rem; position: relative;">
+  <img src="{{ asset('botanical_2.png') }}" class="botanical-decor" style="top: 20%; right: -5%; width: 250px; transform: rotate(10deg); opacity: 0.4;">
+  <img src="{{ asset('botanical_1.png') }}" class="botanical-decor" style="bottom: 10%; left: -2%; width: 200px; transform: rotate(-35deg); opacity: 0.4;">
+  
+  <div class="container">
+    <div class="columns is-vcentered mb-6">
+      <div class="column is-6 animate fade-up">
+        <p class="is-uppercase has-text-primary mb-3" style="letter-spacing: 3px; font-size: 0.85rem;" data-en="Our Philosophy" data-id="Filosofi Kami">Our Philosophy</p>
+        <h2 class="title is-2 mb-5" data-en="Crafted with Uncompromising Passion" data-id="Dibuat dengan Gairah Tanpa Kompromi">Crafted with Uncompromising Passion</h2>
+        <p class="subtitle is-6 has-text-grey mb-5" style="line-height: 1.8; font-weight: 300;" data-en="We believe that true luxury lies in the details. From the meticulous sourcing of organic, stone-ground flour to the hours of careful wild yeast fermentation, we refuse to take shortcuts. Our artisanal autopilot is driven by seasoned hands, not heavy machinery." data-id="Kami percaya bahwa kemewahan sejati terletak pada detail. Mulai dari pemilihan tepung organik yang digiling batu dengan teliti hingga fermentasi ragi liar yang hati-hati selama berjam-jam, kami menolak mengambil jalan pintas.">We believe that true luxury lies in the details. From the meticulous sourcing of organic, stone-ground flour to the hours of careful wild yeast fermentation, we refuse to take shortcuts. Our artisanal autopilot is driven by seasoned hands, not heavy machinery.</p>
+        <p class="subtitle is-6 has-text-grey" style="line-height: 1.8; font-weight: 300;" data-en="The result is a symphony of flavor—delicate layers, golden crusts, and sweet melt-in-your-mouth magic that honors the heritage of traditional baking while appealing to a refined, modern palate." data-id="Hasilnya adalah simfoni rasa—lapisan halus, kulit keemasan, dan keajaiban manis yang meleleh di mulut yang menghormati warisan pemanggangan tradisional.">The result is a symphony of flavor—delicate layers, golden crusts, and sweet melt-in-your-mouth magic that honors the heritage of traditional baking while appealing to a refined, modern palate.</p>
+      </div>
+      <div class="column is-5 is-offset-1 animate scale-in" style="animation-delay: 0.2s;">
+        <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(102,17,35,0.1);">
+          <img src="{{ asset('assets/4ae608d6-4c25-4165-96ee-c4c586505d77.jpg') }}" alt="Artisanal Baker" style="width: 100%; height: auto; display: block;">
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-vcentered mt-6 pt-6" style="border-top: 1px solid var(--cream-dark);">
+      <div class="column is-5 animate scale-in">
+        <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(102,17,35,0.1);">
+          <img src="{{ asset('assets/a2c89631-e663-46fe-84e2-09670bb583a7.jpg') }}" alt="Premium Ingredients" style="width: 100%; height: auto; display: block;">
+        </div>
+      </div>
+      <div class="column is-6 is-offset-1 animate fade-up" style="animation-delay: 0.2s;">
+        <p class="is-uppercase has-text-primary mb-3" style="letter-spacing: 3px; font-size: 0.85rem;" data-en="The Essence" data-id="Esensi">The Essence</p>
+        <h2 class="title is-2 mb-5" data-en="Purity in Every Crumb" data-id="Kemurnian di Setiap Remahan">Purity in Every Crumb</h2>
+        <p class="subtitle is-6 has-text-grey mb-5" style="line-height: 1.8; font-weight: 300;" data-en="We source only the finest, 100% natural ingredients. No artificial additives. No preservatives. Just the pure, unadulterated goodness of nature, expertly combined to create taste profiles that linger long after the last bite." data-id="Kami hanya mengambil bahan alami 100% terbaik. Tanpa bahan pengawet buatan. Hanya kebaikan alam yang murni, dipadukan dengan ahli untuk menciptakan profil rasa yang bertahan lama.">We source only the finest, 100% natural ingredients. No artificial additives. No preservatives. Just the pure, unadulterated goodness of nature, expertly combined to create taste profiles that linger long after the last bite.</p>
+        
+        <div class="mt-5">
+          <div class="is-flex is-align-items-center mb-3" style="gap: 15px;">
+            <span style="font-size: 1.5rem;">🌿</span>
+            <span class="has-text-weight-medium" style="font-size: 1rem; color: var(--charcoal);" data-en="100% Organic Stone-Ground Flour" data-id="100% Tepung Organik">100% Organic Stone-Ground Flour</span>
+          </div>
+          <div class="is-flex is-align-items-center mb-3" style="gap: 15px;">
+            <span style="font-size: 1.5rem;">🥖</span>
+            <span class="has-text-weight-medium" style="font-size: 1rem; color: var(--charcoal);" data-en="Wild Sourdough Fermentation" data-id="Fermentasi Sourdough Alami">Wild Sourdough Fermentation</span>
+          </div>
+          <div class="is-flex is-align-items-center" style="gap: 15px;">
+            <span style="font-size: 1.5rem;">❤️</span>
+            <span class="has-text-weight-medium" style="font-size: 1rem; color: var(--charcoal);" data-en="Handcrafted with Zero Heavy Machinery" data-id="Dibuat Tangan Tanpa Mesin Berat">Handcrafted with Zero Heavy Machinery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-</main>
+
+<!-- CALL TO ACTION -->
+<section class="section" style="background-color: var(--cream); padding-top:5rem; padding-bottom:5rem;">
+  <div class="container has-text-centered animate fade-up">
+    <h3 class="title is-3 mb-4" data-en="Experience the Legacy" data-id="Rasakan Warisannya">Experience the Legacy</h3>
+    <p class="subtitle is-6 has-text-grey mx-auto mb-6" style="max-width: 600px; line-height: 1.8; font-weight: 300;" data-en="We invite you to taste the difference that true artisanal craftsmanship makes. Explore our luxury menu and become part of the Soméra Society." data-id="Kami mengundang Anda untuk merasakan perbedaan yang dihasilkan dari keahlian artisanal sejati.">We invite you to taste the difference that true artisanal craftsmanship makes. Explore our luxury menu and become part of the Soméra Society.</p>
+    <button class="pill-btn" onclick="window.location.href='{{ route('menu') }}'">
+      <span class="btn-arrow">➔</span> <span data-en="Discover Our Menu" data-id="Jelajahi Menu Kami">Discover Our Menu</span>
+    </button>
+  </div>
+</section>
 @endsection

@@ -84,11 +84,11 @@ function setLanguage(lang) {
   });
   document.querySelectorAll('.lang-btn').forEach(btn => {
     if (btn.dataset.lang === lang) {
-      btn.style.fontWeight = '700';
-      btn.style.color = '#842938'; // primary color
+      btn.style.fontWeight = '600';
+      btn.style.color = 'var(--rust)';
     } else {
-      btn.style.fontWeight = '400';
-      btn.style.color = '#554243'; // on-surface-variant
+      btn.style.fontWeight = '300';
+      btn.style.color = 'var(--charcoal)';
     }
   });
 }

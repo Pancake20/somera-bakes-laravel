@@ -8,6 +8,8 @@ use App\Http\Controllers\AuthController;
 // Frontend Routes
 Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('/menu', [FrontendController::class, 'menu'])->name('menu');
+Route::get('/our-story', [FrontendController::class, 'ourStory'])->name('our-story');
+Route::get('/product/{id}', [FrontendController::class, 'productDetail'])->name('product.detail');
 
 // Authentication Routes
 Route::get('/admin/login', [AuthController::class, 'showLogin'])->name('login');

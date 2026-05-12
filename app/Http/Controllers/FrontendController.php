@@ -39,4 +39,28 @@ class FrontendController extends Controller
 
         return view('frontend.menu', compact('settings', 'products'));
     }
+
+    public function ourStory()
+    {
+        $settingsRaw = Setting::all();
+        $settings = [];
+        foreach ($settingsRaw as $s) {
+            $settings[$s->key] = $s->value;
+        }
+
+        return view('frontend.our-story', compact('settings'));
+    }
+
+    public function productDetail($id)
+    {
+        $settingsRaw = Setting::all();
+        $settings = [];
+        foreach ($settingsRaw as $s) {
+            $settings[$s->key] = $s->value;
+        }
+
+        $product = Product::findOrFail($id);
+
+        return view('frontend.product-detail', compact('settings', 'product'));
+    }
 }

@@ -18,11 +18,13 @@ class FrontendController extends Controller
             $settings[$s->key] = $s->value;
         }
 
-        // Get 3 best sellers for the front page cards
-        $products = Product::where('is_bestseller', true)->orderBy('sort_order')->take(3)->get();
+        // Get specific products for the home page cards to match Firebase exactly
+        $featured_left = Product::where('title_en', 'Choco Peanut Cookies')->first();
+        $featured_right = Product::where('title_en', 'Sweet Jam Bread')->first();
+        
         $testimonials = Testimonial::all();
 
-        return view('frontend.index', compact('settings', 'products', 'testimonials'));
+        return view('frontend.index', compact('settings', 'featured_left', 'featured_right', 'testimonials'));
     }
 
     public function menu()

@@ -72,14 +72,14 @@
     </div>
     
     <div class="columns is-multiline pt-5">
-      @if(isset($products[0]))
+      @if(isset($featured_left))
       <!-- Overlay Card 1 -->
       <div class="column is-4 animate fade-up">
-        <div class="overlay-card">
-          <img src="{{ asset($products[0]->image ?? 'assets/f599ca1e-0a32-4701-971e-5fd30516d1a4.jpg') }}" alt="{{ $products[0]->title_en }}">
+        <div class="overlay-card" style="cursor: pointer;" onclick="window.location.href='{{ route('product.detail', $featured_left->id) }}'">
+          <img src="{{ asset($featured_left->image ?? 'assets/f599ca1e-0a32-4701-971e-5fd30516d1a4.jpg') }}" alt="{{ $featured_left->title_en }}">
           <div class="overlay-card-content">
-            <h4 class="title" data-en="{{ $products[0]->title_en }}" data-id="{{ $products[0]->title_id }}">{{ $products[0]->title_en }}</h4>
-            <p data-en="{{ $products[0]->description_en }}" data-id="{{ $products[0]->description_id }}">{{ $products[0]->description_en }}</p>
+            <h4 class="title" data-en="{{ $featured_left->title_en }}" data-id="{{ $featured_left->title_id }}">{{ $featured_left->title_en }}</h4>
+            <p data-en="{{ $featured_left->description_en }}" data-id="{{ $featured_left->description_id }}">{{ $featured_left->description_en }}</p>
           </div>
         </div>
       </div>
@@ -99,14 +99,14 @@
         </div>
       </div>
 
-      @if(isset($products[1]))
+      @if(isset($featured_right))
       <!-- Overlay Card 2 -->
       <div class="column is-4 animate fade-up" style="animation-delay: 0.2s;">
-        <div class="overlay-card">
-          <img src="{{ asset($products[1]->image ?? 'assets/a2c89631-e663-46fe-84e2-09670bb583a7.jpg') }}" alt="{{ $products[1]->title_en }}">
+        <div class="overlay-card" style="cursor: pointer;" onclick="window.location.href='{{ route('product.detail', $featured_right->id) }}'">
+          <img src="{{ asset($featured_right->image ?? 'assets/a2c89631-e663-46fe-84e2-09670bb583a7.jpg') }}" alt="{{ $featured_right->title_en }}">
           <div class="overlay-card-content">
-            <h4 class="title" data-en="{{ $products[1]->title_en }}" data-id="{{ $products[1]->title_id }}">{{ $products[1]->title_en }}</h4>
-            <p data-en="{{ $products[1]->description_en }}" data-id="{{ $products[1]->description_id }}">{{ $products[1]->description_en }}</p>
+            <h4 class="title" data-en="{{ $featured_right->title_en }}" data-id="{{ $featured_right->title_id }}">{{ $featured_right->title_en }}</h4>
+            <p data-en="{{ $featured_right->description_en }}" data-id="{{ $featured_right->description_id }}">{{ $featured_right->description_en }}</p>
           </div>
         </div>
       </div>
